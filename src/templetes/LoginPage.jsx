@@ -16,7 +16,7 @@ export default function LoginPage() {
                         bg-position-[right_1rem_center] pr-10 " />
                     <input type="password" placeholder='password' className="border w-80 h-10 p-5 rounded-full box-border mb-15 bg-[url('/assets/images/prime_lock.png')] bg-no-repeat bg-size-[1.2rem_1.2rem] 
                         bg-position-[right_1rem_center] pr-10" />
-                    <button type='submit' className='w-80 h-10 p-5 rounded-full bg-blue-500 text-white flex items-center justify-center shadow-blue-500 shadow-xl/15 font'>log in</button>
+                    <button type='submit' className='w-80 h-10 p-5 rounded-full bg-background text-white flex items-center justify-center shadow-background shadow-xl/15 font'>log in</button>
                 </form>
                 <a href="" className='text-xs underline'>create an account</a>
             </div>

@@ -8,7 +8,7 @@ import LoginPage_fail from './templetes/LoginPage_fail';
 export default function App() {
   return (
     <>
-      <SignupPage />;
+      <LoginPage_fail />;
     </>
   )
 }

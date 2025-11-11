@@ -26,15 +26,15 @@ export default function SignupPage() {
     }
 
     return (
-        <>
-            <div className="w-screen min-h-screen flex items-center justify-center">
+        <div>
+            <div className="w-screen min-h-screen flex items-center justify-center bg-background">
                 <div className="w-full h-[calc(100vh-6rem)] bg-white rounded-4xl ml-12 mr-12 flex flex-col items-center justify-start box-border">
                     <div className='w-full flex justify-start'>
                         <a href='' className="w-6 h-9 bg-[url('/assets/images/back.png')] bg-cover ml-40 mt-12"></a>
                     </div>
                     <div className="h-15 w-35 bg-[url('/assets/images/airplane.png')] bg-cover bg-top mb-6 flex"></div>
                     <div className='flex text-2xl text-center mb-8'>
-                        <div className='font-light'>회원가입</div>
+                        <div className='font-light text-background'>회원가입</div>
                     </div>
                     <form action="" className='flex flex-col items-center mb-8'>
                         <input type="email" placeholder='email' className="border w-80 h-10 p-5 rounded-full box-border bg-[url('/assets/images/majesticons_mail-line.png')]
@@ -43,18 +43,18 @@ export default function SignupPage() {
                         bg-no-repeat bg-size-[1.2rem_1.2rem] bg-position-[right_1rem_center] pr-10" />
                         <input type="password" placeholder='password' className="border w-80 h-10 p-5 rounded-full box-border bg-[url('/assets/images/prime_lock.png')] bg-no-repeat bg-size-[1.2rem_1.2rem] 
                         bg-position-[right_1rem_center] pr-10 mb-4" />
-                        <input type="password" placeholder='re-enter-password' className="border w-80 h-10 p-5 mb-4 rounded-full box-border bg-[url('/assets/images/prime_lock.png')] bg-no-repeat bg-size-[1.2rem_1.2rem] 
+                        <input type="password" placeholder='re-enter-password' className="border border-background w-80 h-10 p-5 mb-4 rounded-full box-border bg-[url('/assets/images/prime_lock.png')] bg-no-repeat bg-size-[1.2rem_1.2rem] 
                         bg-position-[right_1rem_center] pr-10" />
                         <div className='flex mb-4'>
                             <div className={`w-38 h-12 items-center flex justify-center rounded-full border mr-3 font-semibold
-                            ${clicked ? 'bg-blue-400 text-white' : 'bg-white text-blue-400'}`} onClick={onClick}>giver</div>
+                            ${clicked ? 'bg-background text-white' : 'bg-white text-background'}`} onClick={onClick}>giver</div>
                             <div className={`w-38 h-12 items-center flex justify-center rounded-full border font-semibold
-                            ${clicked2 ? 'bg-blue-400 text-white' : 'bg-white text-blue-400'}`} onClick={onClick2}>receiver</div>
+                            ${clicked2 ? 'bg-background text-white' : 'bg-white text-background'}`} onClick={onClick2}>receiver</div>
                         </div>
-                        <button type='submit' className='w-80 h-10 p-5 text-1.5xl rounded-full bg-blue-500 text-white flex items-center justify-center shadow-blue-500 shadow-xl/15 font'>create an account</button>
+                        <button type='submit' className='w-80 h-10 p-5 text-1.5xl rounded-full bg-background text-white flex items-center justify-center shadow-blue-500 shadow-xl/15 font'>create an account</button>
                     </form>
                 </div>
             </div>
-        </>
+        </div>
     );
 }

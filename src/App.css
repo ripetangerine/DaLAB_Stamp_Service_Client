@@ -10,3 +10,13 @@ body {
     background: #4192FF;
     color: #4192FF;
 }
+
+#root {
+  overflow: hidden;
+  height: 100vh;
+}
+
+@theme {
+  --color-background: #4192FF;
+  --color-fail: #FF4C5E;
+}

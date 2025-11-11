@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        background : '#4192FF', // 커스텀 색상
+        'background' : '#4192FF', // 커스텀 색상
       },
     },
   },

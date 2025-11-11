@@ -43,16 +43,16 @@ export default function SignupPage_fail() {
                         bg-position-[right_1rem_center] pr-10" />
                         <input type="password" placeholder='password' className="border w-80 h-10 p-5 rounded-full box-border bg-[url('/assets/images/prime_lock.png')] bg-no-repeat bg-size-[1.2rem_1.2rem] 
                         bg-position-[right_1rem_center] pr-10 mb-4" />
-                        <input type="password" placeholder='re-enter-password' className="border border-red-500 w-80 h-10 p-5 mb-2 text-red-500 rounded-full box-border bg-[url('/assets/images/prime_lock_red.png')] bg-no-repeat bg-size-[1.2rem_1.2rem] 
+                        <input type="password" placeholder='re-enter-password' className="border border-fail w-80 h-10 p-5 mb-2 text-fail rounded-full box-border bg-[url('/assets/images/prime_lock_red.png')] bg-no-repeat bg-size-[1.2rem_1.2rem] 
                         bg-position-[right_1rem_center] pr-10" />
                         <div className='w-80 flex justify-end '>
-                            <div className='mb-5 text-red-500 text-xs/normal font-normal'>* 비밀번호가 같지 않습니다.</div>
+                            <div className='mb-5 text-fail text-xs/normal font-normal'>* 비밀번호가 같지 않습니다.</div>
                         </div>
                         <div className='flex mb-4'>
                             <div className={`w-38 h-12 items-center flex justify-center rounded-full border mr-3 font-semibold
-                            ${clicked ? 'bg-blue-400 text-white' : 'bg-white text-blue-400'}`} onClick={onClick}>giver</div>
+                            ${clicked ? 'bg-background text-white' : 'bg-white text-background'}`} onClick={onClick}>giver</div>
                             <div className={`w-38 h-12 items-center flex justify-center rounded-full border font-semibold
-                            ${clicked2 ? 'bg-blue-400 text-white' : 'bg-white text-blue-400'}`} onClick={onClick2}>receiver</div>
+                            ${clicked2 ? 'bg-background text-white' : 'bg-white text-background'}`} onClick={onClick2}>receiver</div>
                         </div>
                     </form>
                 </div>

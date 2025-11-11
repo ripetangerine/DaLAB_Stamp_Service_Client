@@ -12,15 +12,15 @@ export default function LoginPage_fail() {
                     <div className='font-light'>에 오신 것을 환영합니다!</div>
                 </div>
                 <form action="" className='flex flex-col items-center mb-8'>
-                    <input type="email" placeholder='email' className="border border-red-500 text-red-500 placeholder-red-500 w-80 h-10 p-5 rounded-full box-border mb-5 bg-[url('/assets/images/majesticons_mail-line_red.png')] bg-no-repeat bg-size-[1.2rem_1.2rem] 
+                    <input type="email" placeholder='email' className="border border-fail text-fail w-80 h-10 p-5 rounded-full box-border mb-5 bg-[url('/assets/images/majesticons_mail-line_red.png')] bg-no-repeat bg-size-[1.2rem_1.2rem] 
                         bg-position-[right_1rem_center] pr-10 " />
-                    <input type="password" placeholder='password' className="border border-red-500 text-red-500 placeholder-red-500 w-80 h-10 p-5 mb-3 rounded-full box-border bg-[url('/assets/images/prime_lock_red.png')] bg-no-repeat bg-size-[1.2rem_1.2rem] 
+                    <input type="password" placeholder='password' className="border border-fail text-fail w-80 h-10 p-5 mb-3 rounded-full box-border bg-[url('/assets/images/prime_lock_red.png')] bg-no-repeat bg-size-[1.2rem_1.2rem] 
                         bg-position-[right_1rem_center] pr-10" />
                     <div className='w-80 flex justify-end '>
-                        <div className='mb-15 text-red-500 text-xs font-medium'>* 아이디 / 비밀번호를 확인해주세요.</div>
+                        <div className='mb-15 text-fail text-xs font-medium'>* 아이디 / 비밀번호를 확인해주세요.</div>
                     </div>
 
-                    <button type='submit' className='w-80 h-10 p-5 rounded-full bg-blue-500 text-white flex items-center justify-center shadow-blue-500 shadow-xl/15'>log in</button>
+                    <button type='submit' className='w-80 h-10 p-5 rounded-full bg-background text-white flex items-center justify-center shadow-background shadow-xl/15'>log in</button>
                 </form>
                 <a href="" className='text-xs underline'>create an account</a>
             </div>
