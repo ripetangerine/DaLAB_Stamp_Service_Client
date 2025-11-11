@@ -30,14 +30,14 @@ export default function SignupPage_fail() {
             <div className="w-screen min-h-screen flex items-center justify-center">
                 <div className="w-full h-[calc(100vh-6rem)] bg-white rounded-4xl ml-12 mr-12 flex flex-col items-center justify-start box-border">
                     <div className='w-full flex justify-start'>
-                        <a href='' className="w-6 h-9 bg-[url('/assets/images/back.png')] bg-cover ml-40 mt-12"></a>
+                        <a href="" className="w-6 h-9 bg-[url('/assets/images/back.png')] bg-cover ml-40 mt-12"></a>
                     </div>
                     <div className="h-15 w-35 bg-[url('/assets/images/airplane.png')] bg-cover bg-top mb-6 flex"></div>
                     <div className='flex text-2xl text-center mb-8'>
                         <div className='font-light'>회원가입</div>
                     </div>
                     <form action="" className='flex flex-col items-center mb-8'>
-                        <input type="text" placeholder='email' className="border w-80 h-10 p-5 rounded-full box-border bg-[url('/assets/images/majesticons_mail-line.png')] bg-no-repeat bg-size-[1.2rem_1.2rem] 
+                        <input type="email" placeholder='email' className="border w-80 h-10 p-5 rounded-full box-border bg-[url('/assets/images/majesticons_mail-line.png')] bg-no-repeat bg-size-[1.2rem_1.2rem] 
                         bg-position-[right_1rem_center] pr-10 mb-4" />
                         <input type="text" placeholder='name' className="border w-80 h-10 p-5 mb-4 rounded-full box-border bg-[url('/assets/images/hugeicons_user-03.png')] bg-no-repeat bg-size-[1.2rem_1.2rem] 
                         bg-position-[right_1rem_center] pr-10" />

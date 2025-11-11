@@ -12,7 +12,7 @@ export default function LoginPage() {
                     <div className='font-light'>에 오신 것을 환영합니다!</div>
                 </div>
                 <form action="" className='flex flex-col items-center mb-8'>
-                    <input type="text" placeholder='email' className="border w-80 h-10 p-5 rounded-full box-border mb-5 bg-[url('/assets/images/majesticons_mail-line.png')] bg-no-repeat bg-size-[1.2rem_1.2rem] 
+                    <input type="email" placeholder='email' className="border w-80 h-10 p-5 rounded-full box-border mb-5 bg-[url('/assets/images/majesticons_mail-line.png')] bg-no-repeat bg-size-[1.2rem_1.2rem] 
                         bg-position-[right_1rem_center] pr-10 " />
                     <input type="password" placeholder='password' className="border w-80 h-10 p-5 rounded-full box-border mb-15 bg-[url('/assets/images/prime_lock.png')] bg-no-repeat bg-size-[1.2rem_1.2rem] 
                         bg-position-[right_1rem_center] pr-10" />

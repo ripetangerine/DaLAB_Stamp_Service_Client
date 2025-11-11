@@ -37,10 +37,10 @@ export default function SignupPage() {
                         <div className='font-light'>회원가입</div>
                     </div>
                     <form action="" className='flex flex-col items-center mb-8'>
-                        <input type="text" placeholder='email' className="border w-80 h-10 p-5 rounded-full box-border bg-[url('/assets/images/majesticons_mail-line.png')] bg-no-repeat bg-size-[1.2rem_1.2rem] 
-                        bg-position-[right_1rem_center] pr-10 mb-4" />
-                        <input type="text" placeholder='name' className="border w-80 h-10 p-5 mb-4 rounded-full box-border bg-[url('/assets/images/hugeicons_user-03.png')] bg-no-repeat bg-size-[1.2rem_1.2rem] 
-                        bg-position-[right_1rem_center] pr-10" />
+                        <input type="email" placeholder='email' className="border w-80 h-10 p-5 rounded-full box-border bg-[url('/assets/images/majesticons_mail-line.png')]
+                        bg-no-repeat bg-size-[1.2rem_1.2rem] bg-position-[right_1rem_center] pr-10 mb-4" />
+                        <input type="text" placeholder='name' className="border w-80 h-10 p-5 mb-4 rounded-full box-border bg-[url('/assets/images/hugeicons_user-03.png')]
+                        bg-no-repeat bg-size-[1.2rem_1.2rem] bg-position-[right_1rem_center] pr-10" />
                         <input type="password" placeholder='password' className="border w-80 h-10 p-5 rounded-full box-border bg-[url('/assets/images/prime_lock.png')] bg-no-repeat bg-size-[1.2rem_1.2rem] 
                         bg-position-[right_1rem_center] pr-10 mb-4" />
                         <input type="password" placeholder='re-enter-password' className="border w-80 h-10 p-5 mb-4 rounded-full box-border bg-[url('/assets/images/prime_lock.png')] bg-no-repeat bg-size-[1.2rem_1.2rem] 
