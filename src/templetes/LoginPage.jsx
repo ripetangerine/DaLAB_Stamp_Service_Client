@@ -4,7 +4,7 @@ import '../App.css'
 
 export default function LoginPage() {
     return (
-        <div className="w-screen min-h-screen flex items-center justify-center">
+        <div className="w-screen min-h-screen flex items-center justify-center bg-background">
             <div className="w-full h-[calc(100vh-6rem)] bg-white rounded-4xl ml-12 mr-12 flex flex-col items-center justify-top box-border">
                 <div className="h-15 w-35 bg-[url('/assets/images/airplane.png')] bg-cover bg-top mb-6 mt-21 flex"></div>
                 <div className='flex text-2xl text-center mb-25'>

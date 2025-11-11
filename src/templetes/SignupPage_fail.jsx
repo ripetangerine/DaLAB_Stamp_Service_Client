@@ -27,7 +27,7 @@ export default function SignupPage_fail() {
 
     return (
         <>
-            <div className="w-screen min-h-screen flex items-center justify-center">
+            <div className="w-screen min-h-screen flex items-center justify-center bg-background">
                 <div className="w-full h-[calc(100vh-6rem)] bg-white rounded-4xl ml-12 mr-12 flex flex-col items-center justify-start box-border">
                     <div className='w-full flex justify-start'>
                         <a href="" className="w-6 h-9 bg-[url('/assets/images/back.png')] bg-cover ml-40 mt-12"></a>

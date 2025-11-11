@@ -3,11 +3,11 @@
 @font-face {
   font-family: "S-coreDream";
   font-weight: lighter;
-  src: url("/assets/fonts/SCDream6.otf") format("truetype");
+  src: url("/assets/fonts/SCDream5.otf") format("truetype");
 }
 
 body {
-    background: #4192FF;
+    
     color: #4192FF;
 }
 
