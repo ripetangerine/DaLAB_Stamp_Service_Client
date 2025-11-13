@@ -1,6 +1,7 @@
 import react from 'react';
 import { useState, useEffect } from 'react';
 import NavigatorBar from '../components/NavigatorBar';
+import AirplaneList from '../components/AirplaneList';
 
 export default function MyPage() {
 
@@ -36,19 +37,13 @@ export default function MyPage() {
 
                         <div className='w-180 h-60 bg-white border border-background pt-3 pb-3 pl-10 pr-20 rounded-r-md rounded-bl-md'>
                             <div className='text-center mb-5 font-semibold'>나의 여행사</div>
-                            <div className='flex ml-10 mr-10 justify-between mb-1'>
-                                <div className='font-semibold'>OO여행사</div>
-                                <div className=''>11명</div>
-                                <div className=''>25/11/01 생성됨</div>
-                                <div className='bg-fail text-white p-1 rounded-md text-xs cursor-pointer'>삭제하기</div>
-                            </div>
+
+                            <AirplaneList apname={"OO여행사"} pnumber={"11명"} cdate={"25/11/01"} />
+
                             <hr className='mb-2' />
-                            <div className='flex ml-10 mr-10 justify-between mb-1'>
-                                <div className='font-semibold'>OO여행사</div>
-                                <div className=''>11명</div>
-                                <div className=''>25/11/01 생성됨</div>
-                                <div className='bg-fail text-white p-1 rounded-md text-xs cursor-pointer'>삭제하기</div>
-                            </div>
+                            
+                            <AirplaneList apname={"BB여행사"} pnumber={"10명"} cdate={"25/11/02"} />
+                            
                             <hr className='mb-2' />
 
                         </div>
