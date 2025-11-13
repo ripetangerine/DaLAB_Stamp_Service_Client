@@ -49,9 +49,9 @@ export default function SignupPage_fail() {
                             <div className='mb-5 text-fail text-xs/normal font-normal'>* 비밀번호가 같지 않습니다.</div>
                         </div>
                         <div className='flex mb-4'>
-                            <div className={`w-38 h-12 items-center flex justify-center rounded-full border mr-3 font-semibold
+                            <div className={`w-38 h-12 items-center flex justify-center rounded-full border mr-3 font-semibold cursor-pointer
                             ${clicked ? 'bg-background text-white' : 'bg-white text-background'}`} onClick={onClick}>giver</div>
-                            <div className={`w-38 h-12 items-center flex justify-center rounded-full border font-semibold
+                            <div className={`w-38 h-12 items-center flex justify-center rounded-full border font-semibold cursor-pointer
                             ${clicked2 ? 'bg-background text-white' : 'bg-white text-background'}`} onClick={onClick2}>receiver</div>
                         </div>
                     </form>
