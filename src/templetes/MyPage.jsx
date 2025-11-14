@@ -6,6 +6,38 @@ import Profile from '../components/Propile';
 
 export default function MyPage() {
 
+    const [list, setList] = useState([
+        {
+            name: "OO여행사",
+            number: "11명",
+            date: "25/11/01"
+        },
+        {
+            name: "BB여행사",
+            number: "10명",
+            date: "25/11/11"
+        },
+        {
+            name: "OO여행사",
+            number: "11명",
+            date: "25/11/01"
+        },
+        {
+            name: "BB여행사",
+            number: "10명",
+            date: "25/11/11"
+        },
+        {
+            name: "OO여행사",
+            number: "11명",
+            date: "25/11/01"
+        },
+    ]);
+
+    const handledel = (index) => {
+        setList(list.filter((arr, i) => i !== index));
+    }
+
     return (
         <>
             <div className="bg-linear-180 from-white to-[#F2F7FF] w-screen min-h-screen">
@@ -25,38 +57,24 @@ export default function MyPage() {
                     <hr className='w-5xl mb-5' />
                     <div className='flex'>
                         <div className='w-50 h-10 bg-background rounded-l-md flex items-center justify-around'>
-                                <div className='text-white'>생성된 여행사</div>
-                                <div className='text-white font-bold text-2xs'>2 개</div>
+                            <div className='text-white'>생성된 여행사</div>
+                            <div className='text-white font-bold text-2xs'>2 개</div>
                         </div>
 
                         <div className='w-180 h-60 bg-white border border-background pt-3 pb-3 pl-10 pr-20 rounded-r-md rounded-bl-md overflow-y-scroll'>
                             <div className='text-center mb-5 font-semibold'>나의 여행사</div>
 
-                            <AirplaneList apname={"OO여행사"} pnumber={"11명"} cdate={"25/11/01"} />
-
-                            <hr className='mb-2' />
-                            
-                            <AirplaneList apname={"BB여행사"} pnumber={"10명"} cdate={"25/11/02"} />
-                            
-                            <hr className='mb-2' />
-
-                            <AirplaneList apname={"OO여행사"} pnumber={"11명"} cdate={"25/11/01"} />
-
-                            <hr className='mb-2' />
-                            
-                            <AirplaneList apname={"BB여행사"} pnumber={"10명"} cdate={"25/11/02"} />
-                            
-                            <hr className='mb-2' />
-
-                            <AirplaneList apname={"OO여행사"} pnumber={"11명"} cdate={"25/11/01"} />
-
-                            <hr className='mb-2' />
-                            
-                            <AirplaneList apname={"BB여행사"} pnumber={"10명"} cdate={"25/11/02"} />
-                            
-                            <hr className='mb-2' />
-                            
-                            
+                            <ul>
+                                {list.map((arr, index) => (
+                                    <li key={index}>
+                                        <div className='flex ml-10 mr-10 justify-between mb-1'>
+                                            <AirplaneList apname={list[index].name} pnumber={list[index].number} cdate={list[index].date} />
+                                            <button className='bg-fail text-white p-1 rounded-md text-xs cursor-pointer' onClick={() => handledel(index)}>삭제하기</button>
+                                        </div>
+                                        <hr className='mb-2' />
+                                    </li>
+                                ))}
+                            </ul>
 
                         </div>
                     </div>
