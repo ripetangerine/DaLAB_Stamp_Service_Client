@@ -4,7 +4,7 @@ import NavigatorBar from '../components/NavigatorBar';
 import AirplaneList from '../components/AirplaneList';
 import Profile from '../components/Propile';
 
-export default function MyPage() {
+export default function MyPageGiver() {
 
     const [list, setList] = useState([
         {
