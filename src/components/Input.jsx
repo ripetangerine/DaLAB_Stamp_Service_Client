@@ -1,6 +1,3 @@
-
-
-
 export default function Input({
   label,
   placeholder,
@@ -28,7 +25,9 @@ export default function Input({
           border border-blue-400
           text-[15px]
           placeholder:text-gray-400
-          focus:outline-none focus:ring-2 focus:ring-blue-300"
+          focus:outline-none focus:ring-2 focus:ring-blue-300
+          shadow-xl
+          "
       />
       {/* 버튼 스타일 받는 */}
       {children}

@@ -1,44 +1,60 @@
-
-import { useState } from 'react'
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import Input from "./components/Input";
-import React from 'react';
+import React, { useEffect } from 'react';
+import './App.css'
+import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom';
+import { getCurrentUser } from "../lib/auth";
 import LoginPage from './pages/LoginPage'
-import LoginPage_uncorrect from './pages/LoginPage_fail';
 import SignupPage from './pages/SignupPage';
-import SignupPage_fail from './pages/SignupPage_fail';
-import LoginPage_fail from './pages/LoginPage_fail';
 import MyPageGiver from './pages/MyPageGiver';
 import MyPageReceiver from './pages/MyPageReceiver';
 import StampPage from './pages/StampPage';
 import PassportPage from './pages/PassportPage';
-import './App.css'
 import ReceiverHome from './pages/RecevierHome';
+import NavigatorBar from './components/NavigatorBar';
 
 export default function App() {
+  const navigate = useNavigate();
+  const [isLogined, setIsLogined] = useState(null);
+
+  useEffect(() => {
+    async function userVaild(){ 
+      const user = await getCurrentUser();
+      if(!user) {
+        navigate("/login");
+        setIsLogined(false)
+        return;
+      }
+      setIsLogined(true)
+      if(window.location.pathname === "/"){
+        if(user.is_user){
+          navigate("/receiver")
+        }
+        else{
+          navigate("/giver")
+        }
+      }
+    }
+    userVaild();
+  }, []);
+
   return (
     <>
-      <ReceiverHome/>
-
-      {/* <MyPageGiver />;  */}
-      {/* <MyPageReceiver />; */}
-      {/* <StampPage />; */}
-      <PassportPage />;
-    </>
-  );
-    {/*
     <BrowserRouter>
-      <nav>
-        <Link to="/">Home</Link> |{" "}
-        <Link to="/about">About</Link> |{" "}
-        <Link to="/contact">Contact</Link>
-      </nav>
+      {isLogined ? <NavigatorBar/> : null}
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </BrowserRouter> */}
-  }
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage/>} />
 
+        <Route path="/" element={<ReceiverHome />} />
+        <Route path="/receiver" element={<ReceiverHome />} />
+        <Route path="/stamp" element={<StampPage/>}/>
+        <Route path="/passport" element={<PassportPage />} />
+        <Route path="/mypage/receiver" element={<MyPageReceiver/>}/>
+        <Route path="/giver" element={<></>}/>
+        <Route path="/mypage/giver" element={<MyPageGiver/>}/>
+      </Routes>
+    </BrowserRouter>
+    
+    </>
+  );
+}
