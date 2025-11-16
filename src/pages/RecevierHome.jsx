@@ -26,7 +26,7 @@ export default function ReceiverHome(){
         navigate("/login");
         return;
       }
-      const {userAgency, error} = await supabase.from('user_agency').select("*").eq("user_id", user.id);
+      const {data:userAgency, error} = await supabase.from('user_agency').select("*").eq("user_id", user.id);
 
       if(error){
         console.log("ReceiverHome supabase error")
