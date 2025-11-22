@@ -15,7 +15,6 @@ export async function getCurrentUser() {
 export async function Login(email, password) {
   return await supabase.auth.signInWithPassword({ email, password });
 }
-import { supabase } from "./supabase";
 
 
 export async function Signup(email, password, name, isUser) {
