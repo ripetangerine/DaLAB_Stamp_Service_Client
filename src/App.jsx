@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import './App.css'
 import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom';
-import { getCurrentUser } from "../lib/auth";
 import LoginPage from './pages/LoginPage'
+import {getCurrentUser} from "./lib/auth"
 import SignupPage from './pages/SignupPage';
 import MyPageGiver from './pages/MyPageGiver';
 import MyPageReceiver from './pages/MyPageReceiver';
