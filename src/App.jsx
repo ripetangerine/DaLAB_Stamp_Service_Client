@@ -38,23 +38,21 @@ export default function App() {
 
   return (
     <>
-    <BrowserRouter>
-      {isLogined ? <NavigatorBar/> : null}
+    {isLogined ? <NavigatorBar/> : null}
 
-      <Routes>
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignupPage/>} />
+    <Routes>
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/signup" element={<SignupPage/>} />
 
-        <Route path="/" element={<ReceiverHome />} />
-        <Route path="/receiver" element={<ReceiverHome />} />
-        <Route path="/stamp" element={<StampPage/>}/>
-        <Route path="/passport" element={<PassportPage />} />
-        <Route path="/mypage/receiver" element={<MyPageReceiver/>}/>
-        <Route path="/giver" element={<></>}/>
-        <Route path="/mypage/giver" element={<MyPageGiver/>}/>
-      </Routes>
-    </BrowserRouter>
-    
+      <Route path="/" element={<ReceiverHome />} />
+      <Route path="/receiver" element={<ReceiverHome />} />
+      <Route path="/stamp" element={<StampPage/>}/>
+      <Route path="/passport" element={<PassportPage />} />
+      <Route path="/mypage/receiver" element={<MyPageReceiver/>}/>
+      <Route path="/giver" element={<></>}/>
+      <Route path="/mypage/giver" element={<MyPageGiver/>}/>
+    </Routes>
+  
     </>
   );
 }
