@@ -17,24 +17,26 @@ export default function App() {
   const navigate = useNavigate();
   const [isLogined, setIsLogined] = useState(null);
 
-  useEffect(async () => {
-    const user = await getCurrentUser();
-    if(!user) {
-      navigate("/login");
-      setIsLogined(false)
-      return;
-    }
-    setIsLogined(true)
-    if(window.location.pathname === "/"){
-      if(user.is_user){
-        navigate("/receiver")
+  useEffect(()=>{
+    async function fetchData(){
+      const user = await getCurrentUser();
+      if(!user) {
+        navigate("/login");
+        setIsLogined(false)
+        return;
+      }
+      setIsLogined(true)
+      if(window.location.pathname === "/"){
+        if(user.is_user){
+          navigate("/receiver")
+        }
+        else{
+          navigate("/giver")
+        }
       }
       else{
-        navigate("/giver")
+        window.location.pathname = "/";
       }
-    }
-    else{
-      window.location.pathname = "/";
     }
   }, [navigate]);
 

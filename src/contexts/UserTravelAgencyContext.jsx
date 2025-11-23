@@ -3,7 +3,7 @@ import { AuthContext } from "../contexts/AuthContext";
 
 export const UserTravelAgencyContext = createContext(null);
 
-export function UserTravelAgencyProvider({children}){
+export default function UserTravelAgencyProvider({children}){
   const { user } = useContext(AuthContext);
   const [isAgencyExist, setIsAgencyExist] = useState(false);
   const [userTravelAgency, setUserTravelAgency] = useState([]);
@@ -11,8 +11,6 @@ export function UserTravelAgencyProvider({children}){
   const [userTravelAgencyName, setUserTravelAgencyName] = useState([]);
 
   useEffect(()=>{
-    if (!user) return;
-
     async function fetchData(){
       const {data:userAgency, error:userAgencyError} = await supabase.from('user_agency').select("*").eq("user_id", user.id);
       if(userAgencyError){
@@ -29,26 +27,39 @@ export function UserTravelAgencyProvider({children}){
         return;
       }
       setIsAgencyExist(true);
-      setUserTravelAgencyId(agencies);
-      // 오버해드 확인
-      const rtnUserTravelAgency = await userTravelAgencyId.map(async (v, i) => {
-        const {data, error} = await supabase.from("travel_agency").select("*").eq("travel_agency_id", v.travel_agency_id)
-        if(error) console.log("rtnUserTravelAgency 오류 발생 맵함수")
-        return data
-      })
-      setUserTravelAgency(rtnUserTravelAgency);
-      setUserTravelAgencyName(userTravelAgency.map((v)=>v.name))
+      setUserTravelAgencyId(agencies.map(v=>v.travel_agency_id));
+
+      const result = await Promise.all(
+        agencies.map(async (v) => {
+          const { data, error } = await supabase
+            .from("travel_agency")
+            .select("*")
+            .eq("travel_agency_id", v.travel_agency_id);
+
+          if (error) console.error(error);
+
+          return data?.[0];
+        })
+      );
+      setUserTravelAgency(result);
+      setUserTravelAgencyName(result.map(v => v?.name));
     }
-  })
+    if (!user) {
+      return () => {}; 
+    }
+    else{
+      fetchData();
+    }
+  }, [user])
 
   return (
-    <UserTravelAgencyContext value={{
+    <UserTravelAgencyContext.Provider value={{
       userTravelAgency, 
       userTravelAgencyId, 
       userTravelAgencyName,
       isAgencyExist
     }}>
       {children}
-    </UserTravelAgencyContext>
+    </UserTravelAgencyContext.Provider>
   );
 }

@@ -4,7 +4,7 @@ import { AuthContext } from "../contexts/AuthContext";
 
 export const UserStampContext = createContext(null);
 
-export function UserStampProvider({children}){
+export default function UserStampProvider({children}){
   const {user} = useContext(AuthContext);
 
   const [mileage, setMileage] = useState(0);
@@ -34,15 +34,15 @@ export function UserStampProvider({children}){
       setUserPriorCountry(priorNames);
     }
     fetchData();
-  })
+  },[])
  
   return(
-    <UserStampContext value={{
+    <UserStampContext.Provider value={{
       mileage,
       userStamp,
       userPriorCountry
     }}>
       {children}
-    </UserStampContext>
+    </UserStampContext.Provider>
   );
 }

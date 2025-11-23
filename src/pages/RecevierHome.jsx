@@ -74,14 +74,23 @@ export default function ReceiverHome(){
             {selectAgencyModal?
               <div className="flex-row absolute right-[500px] bottom-[10px] shadow-xl w-2xs overflow-scroll justify-between">
                 <img src="/assets/travel_agency_modal.png"/>
-                <div className="p-10">
-                  {userTravelAgency.map((v, i)=>{
+                <div className="p-10 h-[200px] w-[200px]">
+                  {/* {userTravelAgencyName.map((v, i)=>{
                     return(
                       <div key={i} className="flex justify-between px-0 py-5 ">
-                        
+                        <div onClick={()=>{return v[i]}}>{v[i]}</div>
                       </div>
                     )
-                  })}
+                  })} */}
+                  {userTravelAgency?.map((agency, i) => (
+                    <div key={i} className="flex justify-between px-0 py-5">
+                      <div
+                        onClick={() => console.log("선택한 여행사:", agency.agency_name)}
+                      >
+                      {agency.agency_name}
+                      </div>
+                    </div>
+                  ))}
                 </div>
             </div>
             : null
