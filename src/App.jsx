@@ -1,9 +1,8 @@
-import { useEffect, useState, createContext } from 'react';
+import { useEffect, useState, createContext, useContext } from 'react';
 import './App.css'
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
 import LoginPage from './pages/LoginPage'
-import {getCurrentUser} from "./lib/auth"
 import SignupPage from './pages/SignupPage';
 import MyPageGiver from './pages/MyPageGiver';
 import MyPageReceiver from './pages/MyPageReceiver';
@@ -11,15 +10,16 @@ import StampPage from './pages/StampPage';
 import PassportPage from './pages/PassportPage';
 import ReceiverHome from './pages/RecevierHome';
 import NavigatorBar from './components/NavigatorBar';
+import { AuthContext } from './contexts/AuthContext';
 
 export default function App() {
 
   const navigate = useNavigate();
   const [isLogined, setIsLogined] = useState(null);
+  const  { user } = useContext(AuthContext);
 
   useEffect(()=>{
     async function fetchData(){
-      const user = await getCurrentUser();
       if(!user) {
         navigate("/login");
         setIsLogined(false)
@@ -38,7 +38,8 @@ export default function App() {
         window.location.pathname = "/";
       }
     }
-  }, [navigate]);
+    fetchData();
+  }, [navigate, user]);
 
   return (
     <>

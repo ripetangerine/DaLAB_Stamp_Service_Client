@@ -33,7 +33,12 @@ export default function UserStampProvider({children}){
       const priorNames = priorCountries.slice().sort((a, b) => a.rank - b.rank).map((v) => v.country_name);
       setUserPriorCountry(priorNames);
     }
-    fetchData();
+    if (!user) {
+      return () => {}; 
+    }
+    else{
+      fetchData();
+    }
   },[])
  
   return(
