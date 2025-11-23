@@ -16,30 +16,29 @@ export default function App() {
 
   const navigate = useNavigate();
   const [isLogined, setIsLogined] = useState(null);
-  const  { user } = useContext(AuthContext);
+  const { user, isLoading } = useContext(AuthContext); // 🚨 AuthContext에서 isLoading을 가져와야 합니다!
 
-  useEffect(()=>{
-    async function fetchData(){
-      if(!user) {
-        navigate("/login");
-        setIsLogined(false)
-        return;
+  useEffect(() => {
+    if (isLoading) {
+      return; 
+    }
+    if (!user) {
+      if (window.location.pathname !== "/login" && window.location.pathname !== "/signup") {
+          navigate("/login");
       }
-      setIsLogined(true)
-      if(window.location.pathname === "/"){
-        if(user.is_user){
-          navigate("/receiver")
-        }
-        else{
-          navigate("/giver")
-        }
-      }
-      else{
-        window.location.pathname = "/";
+      return;
+    }
+
+    if (user && window.location.pathname === "/") {
+      if (user.is_user) {
+        navigate("/receiver");
+      } else {
+        // user.is_user가 false인 경우 (Giver)
+        navigate("/giver");
       }
     }
-    fetchData();
-  }, [navigate, user]);
+    
+  }, [user, isLoading, navigate]);
 
   return (
     <>

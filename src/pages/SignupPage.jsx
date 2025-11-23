@@ -29,7 +29,7 @@ export default function SignupPage() {
           setSignupError("역할(giver/receiver)을 선택해주세요.");
           return;
         }
-        const { user, error } = await signUpWithEmail(
+        const { user, error } = await Signup(
           email,
           password,
           name,

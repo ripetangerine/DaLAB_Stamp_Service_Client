@@ -73,7 +73,7 @@ export default function LoginPage() {
                         className='w-80 h-10 p-5 rounded-full bg-background text-white flex items-center justify-center shadow-background shadow-xl/15 font
                     '>log in</button>
                 </form>
-                <a href="/signup" className='text-xs underline'>create an account</a>
+                <div onClick={()=>navigate('/signup')}>create an account</div>
             </div>
         </div>
     );
