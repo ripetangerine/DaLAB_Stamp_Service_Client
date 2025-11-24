@@ -42,6 +42,11 @@ export default function App() {
 
   return (
     <>
+    {/* 디버깅 */}
+    {/* <ReceiverHome/> */}
+    <WorldMap/>
+
+
     {isLogined ? <NavigatorBar/> : null}
 
     <Routes>

@@ -11,7 +11,6 @@ export default function AuthProvider({ children }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-
       supabase.auth.getSession().then(({ data: { session } }) => {
         setUser(session?.user ?? null);
         setIsLoading(false); 
